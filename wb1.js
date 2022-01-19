@@ -11,6 +11,7 @@ myArr = ['start',...myArr, 'end']
 
 console.log(myArr)
 // ________________________________
+
 //Create private variable in JS
 function secretVar() {
     var private = 'SECRET CODE!';
@@ -18,3 +19,27 @@ function secretVar() {
         return private
     }
 }
+var getPrivateVar = secretVar()
+console.log(getPrivateVar())
+// output:'SECRET CODE'
+
+// ______________________________
+
+// what is the output?
+var num=4;
+function outer() {
+    var num = 2
+    function inner() {
+        num++;
+        var num = 3;
+        console.log(num)
+    }
+    inner();
+}
+outer();
+// output: 3
+// ______________________________
+
+// what is the output?
+console.log(typeof typeof 1)
+// output string
