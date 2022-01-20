@@ -29,4 +29,45 @@ function foo() {
 // }
 // foo()
 
-// 
+// Hoisting does not work with function expressions:
+foo();
+var foo = function() {
+    console.log('hello')
+}
+// output will be an error since it's a function expression
+
+// CALLBACK VS PROMISE
+// CALLBACK EXAMPLE
+function getNumber(cb) {
+    setTimeout(() => {
+      cb(10);
+    }, 100);
+  }
+  
+  getNumber(n => {
+    console.log(n);
+  });
+
+//   _____________________
+function findMax(numbers) {
+    let max = Number.NEGATIVE_INFINITY
+    let i
+    for (i = 0; i < numbers.length; i++) {
+        if (numbers[i] > max) {
+            max = numbers[i]
+        }
+    }
+
+    return max
+}
+
+findMax([10, 20, 30]) // 30
+
+/*
+
+Write me a function that will take in a string and return another string
+    with all the letters in each word reversed (but the words in the original order still).
+    e.g. "Hello world" -> "olleH dlrow"
+
+email: adam.meadows@gmail.com
+*/
